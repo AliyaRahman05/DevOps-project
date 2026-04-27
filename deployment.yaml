@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-app-deployment
+  labels:
+    app: student-app
+spec:
+  # Requirement: 2 replicas as stated in the project brief
+  replicas: 2
+  selector:
+    matchLabels:
+      app: student-app
+  template:
+    metadata:
+      labels:
+        app: student-app
+    spec:
+      containers:
+      - name: student-app
+        # This must match the tag you used in 'docker build -t student-app'
+        image: student-app:latest
+        # Since we are running locally, we tell K8s not to look for the image on the internet
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
