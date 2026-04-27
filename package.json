@@ -1,0 +1,13 @@
+{
+  "name": "devops-node-app",
+  "version": "1.0.0",
+  "description": "Simple Express app for CSEB5143 Class Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "echo 'Build stage: Preparing production assets...'"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
